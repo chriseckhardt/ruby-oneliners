@@ -273,6 +273,9 @@ Latest version of this file can be found at:
 
         $  ruby -pe '@lineFound = true if $_ !~ /^\s*$/; next if !@lineFound' < file.txt
 
+* print output of netstat for lines that have Send-Q > 0
+
+        $ netstat -lant| ruby -ane 'print if $F[2].to_i > 0'
 
 If you have any additional scripts to contribute or if you find errors
 in this document, please send an e-mail to the compiler.  Indicate the
